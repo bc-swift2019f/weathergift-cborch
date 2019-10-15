@@ -12,8 +12,10 @@ class PageVC: UIPageViewController {
     var currentPage = 0
     var locationsArray = ["Local City Weather", "Chestnut Hill, MA", "Sydney, Australia", "Accra, Ghana", "Uglich Russia"]
     var pageControl: UIPageControl!
+    var listButton: UIButton!
     var barButtonWidth: CGFloat = 44
     var barButtonHeight: CGFloat = 44
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,23 @@ class PageVC: UIPageViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         configurePageControl()
+        configureListButton()
     }
     
+    func configureListButton() {
+        let safeHeight = view.frame.height - view.safeAreaInsets.bottom
+        listButton = UIButton(frame: CGRect(x: view.frame.width - barButtonWidth, y: safeHeight - barButtonHeight, width: barButtonWidth, height: barButtonHeight))
+        listButton.setImage(UIImage(named: "listbutton"), for: .normal)
+        listButton.setImage(UIImage(named: "listbutton-highlighted"), for: .highlighted)
+        listButton.addTarget(self, action: #selector(segueToLocationVC), for: .touchUpInside)
+        view.addSubview(listButton)
+    }
+    
+    @objc func segueToLocationVC() {
+        print("Hey you clicked me")
+    }
+    
+    //MARK:- UI Configuration Methods
     func configurePageControl() {
         let pageControlHeight: CGFloat = barButtonHeight
         let pageControlWidth: CGFloat = view.frame.width - (barButtonWidth * 2)
@@ -39,6 +56,7 @@ class PageVC: UIPageViewController {
         view.addSubview(pageControl)
     }
     
+    //MARK:- Create View Controller for UIPageViewController
     func createDetailVC(forPage page: Int) -> DetailVC {
         currentPage = min(max(0, page), locationsArray.count - 1)
         let detailVC = storyboard!.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC // Like creating a DetialVC object I think
