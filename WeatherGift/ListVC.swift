@@ -10,6 +10,8 @@ import UIKit
 
 class ListVC: UIViewController {
     
+    @IBOutlet weak var addBarButton: UIBarButtonItem!
+    @IBOutlet weak var editBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     var locationsArray = [String]()
     var currentPage = 0
@@ -29,6 +31,18 @@ class ListVC: UIViewController {
             destiantion.locationsArray = locationsArray
         }
     }
+    @IBAction func editBarButtonPressed(_ sender: UIBarButtonItem) {
+        if tableView.isEditing {
+            tableView.setEditing(false, animated: true)
+            editBarButton.title = "Edit"
+            addBarButton.isEnabled = true
+        } else {
+            tableView.setEditing(true, animated: true)
+            editBarButton.title = "Done"
+            addBarButton.isEnabled = false
+        }
+    }
+    
 }
 
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
@@ -42,5 +56,29 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    //MARK:- Table View Editing Functions
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            locationsArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let itemToMove = locationsArray[sourceIndexPath.row]
+        locationsArray.remove(at: sourceIndexPath.row)
+        locationsArray.insert(itemToMove, at: destinationIndexPath.row)
+    }
+    
+    //MARK:- Table View Methods to freeze the first cell
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return (indexPath.row != 0 ? true : false)
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return (indexPath.row != 0 ? true : false)
+    }
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+       return (proposedDestinationIndexPath.row == 0 ? sourceIndexPath : proposedDestinationIndexPath)
+    }
 }
