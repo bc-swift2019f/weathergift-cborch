@@ -24,7 +24,12 @@ class DetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUserInterface()
+        if currentPage != 0 {
+            self.locationsArray[currentPage].getWeather {
+                self.updateUserInterface()
+            }
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +42,8 @@ class DetailVC: UIViewController {
     func updateUserInterface() {
         locationLabel.text = locationsArray[currentPage].name
         dateLabel.text = locationsArray[currentPage].coordinates
+        temperatureLabel.text = locationsArray[currentPage].currentTemp
+        summaryLabel.text = locationsArray[currentPage].currentSummary
     }
 
 
@@ -48,8 +55,6 @@ extension DetailVC: CLLocationManagerDelegate {
     func getLocation() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        let status = CLLocationManager.authorizationStatus()
-        handleLocationAuthorizationStatus(status: status)
     }
     
     func handleLocationAuthorizationStatus(status: CLAuthorizationStatus) {
@@ -76,7 +81,6 @@ extension DetailVC: CLLocationManagerDelegate {
         let currentLatitude = currentLocation.coordinate.latitude
         let currentLongitude = currentLocation.coordinate.longitude
         let currentCordinates = "\(currentLatitude),\(currentLongitude)"
-        print(currentCordinates)
         dateLabel.text = currentCordinates
         geoCoder.reverseGeocodeLocation(currentLocation, completionHandler:
             {placemarks, error in
@@ -89,8 +93,10 @@ extension DetailVC: CLLocationManagerDelegate {
             }
             self.locationsArray[0].name = place
             self.locationsArray[0].coordinates = currentCordinates
-            self.locationsArray[0].getWeather()
-            self.updateUserInterface()
+            self.locationsArray[0].getWeather {
+                self.updateUserInterface()
+            }
+            
         })
     }
     
