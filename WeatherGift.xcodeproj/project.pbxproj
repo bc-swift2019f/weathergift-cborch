@@ -15,6 +15,7 @@
 		C505E9F22350098F002C74B2 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C505E9F12350098F002C74B2 /* DetailVC.swift */; };
 		C505E9F423500E7D002C74B2 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C505E9F323500E7D002C74B2 /* ListVC.swift */; };
 		C505E9F62350111A002C74B2 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C505E9F52350111A002C74B2 /* PageVC.swift */; };
+		C5904E20235DFCF0009BE00E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5904E1F235DFCF0009BE00E /* Constants.swift */; };
 		C5B2E837235D0BBD00612237 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2E836235D0BBD00612237 /* WeatherLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		C505E9F12350098F002C74B2 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		C505E9F323500E7D002C74B2 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		C505E9F52350111A002C74B2 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		C5904E1F235DFCF0009BE00E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C5B2E836235D0BBD00612237 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 			children = (
 				C505E9DF23500851002C74B2 /* AppDelegate.swift */,
 				C5B2E836235D0BBD00612237 /* WeatherLocation.swift */,
+				C5904E1F235DFCF0009BE00E /* Constants.swift */,
 				C505E9F52350111A002C74B2 /* PageVC.swift */,
 				C505E9F12350098F002C74B2 /* DetailVC.swift */,
 				C505E9F323500E7D002C74B2 /* ListVC.swift */,
@@ -235,6 +238,7 @@
 				C505E9F62350111A002C74B2 /* PageVC.swift in Sources */,
 				C505E9E023500851002C74B2 /* AppDelegate.swift in Sources */,
 				C505E9F22350098F002C74B2 /* DetailVC.swift in Sources */,
+				C5904E20235DFCF0009BE00E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
