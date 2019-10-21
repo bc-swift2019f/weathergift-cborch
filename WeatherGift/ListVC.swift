@@ -105,11 +105,11 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
     func updateTable(place: GMSPlace) {
         let newIndexPath = IndexPath(row: locationsArray.count, section: 0)
         var newWeatherLocation = WeatherLocation()
-        newWeatherLocation.name = place.name!
         let longitude = place.coordinate.longitude
         let latitude = place.coordinate.latitude
         newWeatherLocation.coordinates = "\(latitude),\(longitude)"
         print(newWeatherLocation.coordinates)
+        newWeatherLocation.name = place.name!
         locationsArray.append(newWeatherLocation)
         tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
