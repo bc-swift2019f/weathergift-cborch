@@ -18,6 +18,7 @@
 		C5904E20235DFCF0009BE00E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5904E1F235DFCF0009BE00E /* Constants.swift */; };
 		C5B2E837235D0BBD00612237 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2E836235D0BBD00612237 /* WeatherLocation.swift */; };
 		C5ED7F6E236683E700CEDCD4 /* DayWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED7F6D236683E700CEDCD4 /* DayWeatherCell.swift */; };
+		C5ED7F7023674E3B00CEDCD4 /* TimeInterval+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED7F6F23674E3B00CEDCD4 /* TimeInterval+format.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C5904E1F235DFCF0009BE00E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C5B2E836235D0BBD00612237 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 		C5ED7F6D236683E700CEDCD4 /* DayWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherCell.swift; sourceTree = "<group>"; };
+		C5ED7F6F23674E3B00CEDCD4 /* TimeInterval+format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+format.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				C505E9F52350111A002C74B2 /* PageVC.swift */,
 				C505E9F12350098F002C74B2 /* DetailVC.swift */,
 				C5ED7F6D236683E700CEDCD4 /* DayWeatherCell.swift */,
+				C5ED7F6F23674E3B00CEDCD4 /* TimeInterval+format.swift */,
 				C505E9F323500E7D002C74B2 /* ListVC.swift */,
 				C5904E1F235DFCF0009BE00E /* Constants.swift */,
 				C505E9E323500851002C74B2 /* Main.storyboard */,
@@ -240,6 +243,7 @@
 				C5B2E837235D0BBD00612237 /* WeatherLocation.swift in Sources */,
 				C505E9F423500E7D002C74B2 /* ListVC.swift in Sources */,
 				C505E9F62350111A002C74B2 /* PageVC.swift in Sources */,
+				C5ED7F7023674E3B00CEDCD4 /* TimeInterval+format.swift in Sources */,
 				C505E9E023500851002C74B2 /* AppDelegate.swift in Sources */,
 				C505E9F22350098F002C74B2 /* DetailVC.swift in Sources */,
 				C5904E20235DFCF0009BE00E /* Constants.swift in Sources */,
