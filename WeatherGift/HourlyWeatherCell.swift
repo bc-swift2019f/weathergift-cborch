@@ -36,3 +36,4 @@ class HourlyWeatherCell: UICollectionViewCell {
         hourlyTime.text = dateString
     }
 }
+
